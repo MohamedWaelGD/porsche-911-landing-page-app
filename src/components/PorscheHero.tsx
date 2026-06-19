@@ -254,6 +254,28 @@ export function PorscheHero() {
   const [progress, setProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    if (isLoaded) return;
+
+    const { body, documentElement } = document;
+    const previousBodyOverflow = body.style.overflow;
+    const previousHtmlOverflow = documentElement.style.overflow;
+
+    body.style.overflow = "hidden";
+    documentElement.style.overflow = "hidden";
+
+    return () => {
+      body.style.overflow = previousBodyOverflow;
+      documentElement.style.overflow = previousHtmlOverflow;
+    };
+  }, [isLoaded]);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+  }, [isLoaded]);
+
   const scrollToStep = (step: number) => {
     if (step === 4) {
       document.querySelector("#experience")?.scrollIntoView({ behavior: "smooth" });
