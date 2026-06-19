@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Porscha 911';
+  src: url('/fonts/911 Porscha.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --font-display: 'Arial Narrow', 'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif;
+  --font-brand: 'Porscha 911', 'Eurostile Extended', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-wide: 'Eurostile Extended', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  color: #f6f2e9;
+  background: #050505;
+  font-family: var(--font-display);
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #050505;
+  scroll-behavior: auto;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background: #050505;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #d7ad74;
+  outline-offset: 4px;
+}
+
+#root {
+  min-height: 100dvh;
+}
