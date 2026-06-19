@@ -233,7 +233,7 @@ export function ExperienceSection() {
 
         <a className="experience-link" href="#models">
           Begin your Porsche journey
-          <i />
+          <span aria-hidden="true" />
           <ArrowRight size={20} weight="light" aria-hidden="true" />
         </a>
       </div>

@@ -184,7 +184,7 @@ function Header({ onNavigate }: { onNavigate: (step: number) => void }) {
       </nav>
       <button className="menu-button" type="button" aria-label="Open menu">
         {Array.from({ length: 9 }, (_, index) => (
-          <span key={index} />
+          <span key={index} aria-hidden="true" />
         ))}
       </button>
     </header>
@@ -563,16 +563,16 @@ export function PorscheHero() {
           </main>
 
           <aside className="slide-index hero-reveal" aria-label="Section progress">
-            <button className="progress-step" data-step="1" type="button" onClick={() => scrollToStep(1)}>
+            <button className="progress-step" data-step="1" type="button" aria-label="Models section" onClick={() => scrollToStep(1)}>
               01
             </button>
-            <i>
+            <span className="progress-track" aria-hidden="true">
               <b className="progress-fill" />
-            </i>
-            <button className="progress-step" data-step="2" type="button" onClick={() => scrollToStep(2)}>
+            </span>
+            <button className="progress-step" data-step="2" type="button" aria-label="Design section" onClick={() => scrollToStep(2)}>
               02
             </button>
-            <button className="progress-step" data-step="3" type="button" onClick={() => scrollToStep(3)}>
+            <button className="progress-step" data-step="3" type="button" aria-label="Performance section" onClick={() => scrollToStep(3)}>
               03
             </button>
           </aside>
